@@ -5,7 +5,14 @@ import MovieForm from './MovieForm';
 import MovieList from './MovieList';
 
 function App() {
-  const [allMovies, setAllMovies] = useState([]);
+  const [allMovies, setAllMovies] = useState([
+    {
+      name: 'Harry Potter',
+      year: '2002',
+      color: 'lightblue',
+      director: 'J.K Rowling',
+    },
+  ]);
   const [filteredMovies, setAllFilteredMovies] = useState([]);
   const [movieFormName, setMovieFormName] = useState([]);
   const [movieFromYearReleased, setMovieFromYearReleased] = useState('');
@@ -13,6 +20,7 @@ function App() {
   const [movieFormColor, setMovieFormColor] = useState('lightgreen');
   const [filterQuery, setFilterQuery] = useState('');
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => handleFilterMovies(filterQuery), [allMovies, filterQuery]);
 
   function submitMovie(e) {
