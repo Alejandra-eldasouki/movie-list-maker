@@ -1,9 +1,8 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-
+import Movie from './Movie';
 
 function App() {
-
   const [allMovies, setAllMovies] = useState([]);
   const [filteredMovies, setAllFilteredMovies] = useState([]);
   const [movieFormName, setMovieFormName] = useState([]);
@@ -45,20 +44,16 @@ function App() {
   }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="current-movie-quarter">
+        <Movie
+          movie={{
+            name: movieFormName,
+            year: movieFromYearReleased,
+            color: movieFormColor,
+            director: movieFormDirector,
+          }}
+        />
+      </div>
     </div>
   );
 }
