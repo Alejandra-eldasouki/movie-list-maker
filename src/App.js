@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import Movie from './Movie';
 import MovieForm from './MovieForm';
+import MovieList from './MovieList';
 
 function App() {
   const [allMovies, setAllMovies] = useState([]);
@@ -69,6 +70,10 @@ function App() {
         setMovieFormDirector={setMovieFormDirector}
         movieFormDirector={movieFormDirector}
         submitMovie={submitMovie}
+      />
+      <MovieList
+        movies={filterQuery ? filteredMovies : allMovies}
+        handleDeleteMovie={handleDeleteMovie}
       />
     </div>
   );
