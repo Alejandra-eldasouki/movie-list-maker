@@ -13,6 +13,7 @@ export default function MovieForm({
 }) {
   return (
     <div className="movie-form-container">
+
       <form onSubmit={submitMovie} className="movie-form">
         <label>
           Movie Name

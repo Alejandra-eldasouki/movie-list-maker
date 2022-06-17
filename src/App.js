@@ -11,13 +11,14 @@ function App() {
       year: '2002',
       color: 'lightblue',
       director: 'J.K Rowling',
+      
     },
   ]);
   const [filteredMovies, setAllFilteredMovies] = useState([]);
   const [movieFormName, setMovieFormName] = useState([]);
   const [movieFromYearReleased, setMovieFromYearReleased] = useState('');
   const [movieFormDirector, setMovieFormDirector] = useState('');
-  const [movieFormColor, setMovieFormColor] = useState('lightgreen');
+  const [movieFormColor, setMovieFormColor] = useState('');
   const [filterQuery, setFilterQuery] = useState('');
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
