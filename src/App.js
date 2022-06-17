@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import Movie from './Movie';
+import MovieForm from './MovieForm';
 
 function App() {
   const [allMovies, setAllMovies] = useState([]);
@@ -54,6 +55,21 @@ function App() {
           }}
         />
       </div>
+      <div className="movie-filter">
+        Filter Movies
+        <input onChange={(e) => setFilterQuery(e.target.value)} />
+      </div>
+      <MovieForm
+        setMovieFormName={setMovieFormName}
+        movieFormName={movieFormName}
+        setMovieFormYearReleased={setMovieFromYearReleased}
+        movieFormYearReleased={movieFromYearReleased}
+        setMovieFormColor={setMovieFormColor}
+        movieFormColor={movieFormColor}
+        setMovieFormDirector={setMovieFormDirector}
+        movieFormDirector={movieFormDirector}
+        submitMovie={submitMovie}
+      />
     </div>
   );
 }
